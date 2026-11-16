@@ -3,6 +3,9 @@ const app = express();
 app.use(express.json());
 const products = [];
 
+app.get('/', (req, res) => {
+  res.send('Product API is running!');
+});
 app.post("/products", (req, res) => {
     const newProduct = req.body;
     products.push(newProduct);
